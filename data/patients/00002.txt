@@ -1,0 +1,35 @@
+Patient<sep>王越峰<sep>ID:00001
+Symptom<sep>牙不齐
+Dental<sep>上中线右偏<sep>偏移距离:2mm
+Dental<sep>上下牙弓不对称
+Dental<sep>上下牙弓卵圆形
+Dental<sep>下牙弓宽度略窄
+Tooth<sep>37<sep>问题:全冠修复
+Dental<sep>前牙覆盖正常<sep>覆盖值:2mm
+Dental<sep>右侧磨牙中性关系
+Dental<sep>左侧磨牙中性关系
+Dental<sep>恒牙期
+Dental<sep>前牙覆合正常
+Dental<sep>Bolton指数<sep>前牙比:79.1%<sep>全牙比:91.5%
+Dental<sep>Spee曲线<sep>曲线值:2.5mm
+Dental<sep>上牙列中度拥挤<sep>拥挤度:5.5mm
+Dental<sep>下牙列轻度拥挤<sep>拥挤度:4mm
+Tooth<sep>18<sep>问题:可见
+Tooth<sep>48<sep>问题:可见
+Tooth<sep>37<sep>问题:RCT后
+Skeletal<sep>骨性I类
+Skeletal<sep>颏部发育过度
+Skeletal<sep>垂直向低角型
+Softtissue<sep>颏点基本居中
+Softtissue<sep>侧面观凹面型
+Softtissue<sep>面下1/3正常
+Functional<sep>下颌运动正常
+Functional<sep>开口型正常
+Growth<sep>无生长发育潜力
+UnhealthyHabits<sep>吸烟
+TreatmentPlan<sep>隐形矫治、不拔牙矫治<sep>id:1<sep>矫治目标:无<sep>矫治步骤:1. 上下唇倾排齐，解除拥挤及扭转
+2. 后牙锁合先利用矫治器纠正，若无法完成则利用交互牵引纠正
+3. 维持磨牙关系
+4. 因27根尖炎反复发作，正畸治疗过程中牙根吸收、炎症加剧甚至无法保留的可能性。
+5. 智齿酌情
+6. 正畸保持<sep>矫治费用:30000元

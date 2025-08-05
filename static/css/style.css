@@ -1,0 +1,303 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 控制区域 */
+.controls {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.controls h1 {
+    color: #2c5aa0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navigation button {
+    padding: 8px 16px;
+    background: #e3f2fd;
+    border: 1px solid #2196f3;
+    border-radius: 5px;
+    color: #1976d2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navigation button:hover {
+    background: #2196f3;
+    color: white;
+}
+
+.navigation button:disabled {
+    background: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+#patient-selector {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    min-width: 150px;
+}
+
+.save-button {
+    padding: 10px 20px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-button:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+}
+
+/* 工作区域 */
+.workspace {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    flex: 1;
+}
+
+.panel {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#problems-panel h2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.chip-container {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: flex-start;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* 词块样式 */
+.chip {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 问题词块 */
+.chip.problem {
+    background: #fff3e0;
+    border-color: #ffb74d;
+    color: #ef6c00;
+}
+
+.chip.problem:hover {
+    background: #ffe0b2;
+    border-color: #ff9800;
+}
+
+.chip.problem.linked {
+    background: #e8f5e8;
+    border-color: #4caf50;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+/* 方案词块 */
+.chip.solution {
+    background: #e3f2fd;
+    border-color: #64b5f6;
+    color: #1976d2;
+}
+
+.chip.solution:hover {
+    background: #bbdefb;
+    border-color: #2196f3;
+}
+
+.chip.solution.selected {
+    background: #1976d2;
+    border-color: #0d47a1;
+    color: white;
+    font-weight: 600;
+    transform: scale(1.05);
+}
+
+.chip.solution.editable {
+    background: #fff9c4;
+    border-color: #fbc02d;
+    color: #f57f17;
+    outline: none;
+    cursor: text;
+}
+
+/* 加载状态 */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading.hidden {
+    display: none;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #2196f3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 消息提示 */
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    z-index: 1001;
+    min-width: 300px;
+    text-align: center;
+}
+
+.message.hidden {
+    display: none;
+}
+
+.message.success {
+    border-left: 4px solid #4caf50;
+}
+
+.message.error {
+    border-left: 4px solid #f44336;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .navigation {
+        justify-content: center;
+    }
+    
+    .chip-container {
+        max-height: 50vh;
+    }
+}
+
+/* 滚动条样式 */
+.chip-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chip-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.chip-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.chip-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

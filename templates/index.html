@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正畸"症状-方案"逻辑关系标注工具</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="controls">
+            <h1 id="patient-info">正畸"症状-方案"逻辑关系标注工具</h1>
+            <div class="navigation">
+                <button id="prev-patient">上一例</button>
+                <select id="patient-selector">
+                    <option value="">选择患者...</option>
+                </select>
+                <button id="next-patient">下一例</button>
+            </div>
+            <div class="actions">
+                <button id="save-btn" class="save-button">保存标注</button>
+            </div>
+        </header>
+
+        <main class="workspace">
+            <div class="panel" id="problems-panel">
+                <h2>问题（症状、检查发现）</h2>
+                <div id="problems-container" class="chip-container">
+                    <!-- JS会在这里动态生成问题词块 -->
+                </div>
+            </div>
+
+            <div class="panel" id="solutions-panel">
+                <h2>诊疗动作（双击修改）</h2>
+                <div id="solutions-container" class="chip-container">
+                    <!-- JS会在这里动态生成诊疗动作词块 -->
+                </div>
+            </div>
+        </main>
+
+        <div id="loading" class="loading hidden">
+            <div class="loading-spinner"></div>
+            <p>加载中...</p>
+        </div>
+
+        <div id="message" class="message hidden">
+            <p id="message-text"></p>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

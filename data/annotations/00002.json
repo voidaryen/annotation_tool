@@ -1,0 +1,25 @@
+{
+  "patient_id": "00002",
+  "annotations": {
+    "action-0": [
+      "problem-9",
+      "problem-11",
+      "problem-13",
+      "problem-14"
+    ],
+    "action-1": [
+      "problem-6",
+      "problem-8"
+    ]
+  },
+  "solutions": [
+    {
+      "id": "action-0",
+      "text": "LLM response 1 "
+    },
+    {
+      "id": "action-1",
+      "text": "LLM response 2"
+    }
+  ]
+}
