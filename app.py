@@ -102,7 +102,7 @@ def call_llm(prompt: str, test_mode: bool=False) -> str:
         print(f"Calling LLM with prompt: {prompt}")
         return "LLM response 1 \nLLM response 2" 
     
-    client = OpenAI(api_key="sk-e73e2fe0f0d3438d8dfe2e93ec02eac7", base_url="https://api.deepseek.com")
+    client = OpenAI(api_key="xxxxxx", base_url="https://api.deepseek.com")
 
     response = client.chat.completions.create(
         model="deepseek-chat",
@@ -168,26 +168,42 @@ def get_patient_data(patient_id):
         # 解析病历
         parsed_data = parse_patient_file(content)
         
-        # 处理治疗方案
-        raw_actions = parsed_data["treatment_plan"]
-        action_library = load_action_library()
-        standardized_actions = standardize_actions_with_llm(raw_actions, action_library)
-        
-        # 为动作生成ID
-        solutions = []
-        for i, action in enumerate(standardized_actions):
-            solutions.append({
-                "id": f"action-{i}",
-                "text": action
-            })
-        
-        # 加载现有标注
+        # 检查是否存在已保存的标注文件
         annotation_file = os.path.join(ANNOTATIONS_DIR, f"{patient_id}.json")
         annotations = {}
+        solutions = []
+        
         if os.path.exists(annotation_file):
+            # 如果存在标注文件，优先使用其中的solutions和annotations
             with open(annotation_file, 'r', encoding='utf-8') as f:
                 annotation_data = json.load(f)
                 annotations = annotation_data.get("annotations", {})
+                solutions = annotation_data.get("solutions", [])
+                
+            # 如果标注文件中没有solutions，则从原始数据生成
+            if not solutions:
+                raw_actions = parsed_data["treatment_plan"]
+                action_library = load_action_library()
+                standardized_actions = standardize_actions_with_llm(raw_actions, action_library)
+                
+                # 为动作生成ID
+                for i, action in enumerate(standardized_actions):
+                    solutions.append({
+                        "id": f"action-{i}",
+                        "text": action
+                    })
+        else:
+            # 如果不存在标注文件，从原始数据生成solutions
+            raw_actions = parsed_data["treatment_plan"]
+            action_library = load_action_library()
+            standardized_actions = standardize_actions_with_llm(raw_actions, action_library)
+            
+            # 为动作生成ID
+            for i, action in enumerate(standardized_actions):
+                solutions.append({
+                    "id": f"action-{i}",
+                    "text": action
+                })
         
         return jsonify({
             "patient_id": patient_id,
@@ -228,6 +244,91 @@ def save_annotations(patient_id):
         save_action_library(action_library)
         
         return jsonify({"success": True, "message": "标注保存成功"})
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/action/add/<patient_id>', methods=['POST'])
+def add_new_action(patient_id):
+    """为指定患者添加新的诊疗动作"""
+    try:
+        data = request.get_json()
+        action_text = data.get('text', '').strip()
+        
+        if not action_text:
+            return jsonify({"error": "动作文本不能为空"}), 400
+        
+        # 加载现有标注文件
+        annotation_file = os.path.join(ANNOTATIONS_DIR, f"{patient_id}.json")
+        if os.path.exists(annotation_file):
+            with open(annotation_file, 'r', encoding='utf-8') as f:
+                annotation_data = json.load(f)
+        else:
+            annotation_data = {
+                "patient_id": patient_id,
+                "annotations": {},
+                "solutions": []
+            }
+        
+        # 添加新动作
+        new_action_id = f"action-{len(annotation_data['solutions'])}"
+        new_action = {
+            "id": new_action_id,
+            "text": action_text
+        }
+        
+        annotation_data['solutions'].append(new_action)
+        
+        # 保存文件
+        with open(annotation_file, 'w', encoding='utf-8') as f:
+            json.dump(annotation_data, f, ensure_ascii=False, indent=2)
+        
+        # 更新动作库
+        action_library = load_action_library()
+        if action_text not in action_library:
+            action_library.append(action_text)
+            save_action_library(action_library)
+        
+        return jsonify({
+            "success": True,
+            "action": new_action,
+            "message": "新动作添加成功"
+        })
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/action/delete/<patient_id>/<action_id>', methods=['DELETE'])
+def delete_action(patient_id, action_id):
+    """删除指定患者的诊疗动作"""
+    try:
+        # 加载现有标注文件
+        annotation_file = os.path.join(ANNOTATIONS_DIR, f"{patient_id}.json")
+        if not os.path.exists(annotation_file):
+            return jsonify({"error": "标注文件不存在"}), 404
+            
+        with open(annotation_file, 'r', encoding='utf-8') as f:
+            annotation_data = json.load(f)
+        
+        # 删除solutions中的动作
+        solutions = annotation_data.get("solutions", [])
+        solutions = [s for s in solutions if s["id"] != action_id]
+        annotation_data["solutions"] = solutions
+        
+        # 删除相关的标注链接
+        annotations = annotation_data.get("annotations", {})
+        if action_id in annotations:
+            del annotations[action_id]
+        annotation_data["annotations"] = annotations
+        
+        # 保存文件
+        with open(annotation_file, 'w', encoding='utf-8') as f:
+            json.dump(annotation_data, f, ensure_ascii=False, indent=2)
+        
+        return jsonify({
+            "success": True,
+            "message": "动作删除成功"
+        })
         
     except Exception as e:
         return jsonify({"error": str(e)}), 500

@@ -10,6 +10,10 @@
     "action-1": [
       "problem-6",
       "problem-8"
+    ],
+    "action-2": [
+      "problem-12",
+      "problem-14"
     ]
   },
   "solutions": [
@@ -20,6 +24,11 @@
     {
       "id": "action-1",
       "text": "LLM response 2"
+    },
+    {
+      "id": "action-2",
+      "text": "123",
+      "isNew": false
     }
   ]
 }

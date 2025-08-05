@@ -2,9 +2,11 @@
   "patient_id": "00001",
   "annotations": {
     "action-0": [
-      "problem-2",
-      "problem-6",
-      "problem-11"
+      "problem-11",
+      "problem-3",
+      "problem-14",
+      "problem-20",
+      "problem-5"
     ],
     "action-1": [
       "problem-2",
@@ -12,6 +14,23 @@
       "problem-12",
       "problem-17",
       "problem-13"
+    ],
+    "action-3": [
+      "problem-2",
+      "problem-6",
+      "problem-5",
+      "problem-11",
+      "problem-12",
+      "problem-14",
+      "problem-19"
+    ],
+    "action-4": [
+      "problem-12",
+      "problem-13"
+    ],
+    "action-2": [
+      "problem-22",
+      "problem-11"
     ]
   },
   "solutions": [
@@ -22,6 +41,21 @@
     {
       "id": "action-1",
       "text": "LLM response 2"
+    },
+    {
+      "id": "action-2",
+      "isNew": false,
+      "text": "1223"
+    },
+    {
+      "id": "action-3",
+      "isNew": false,
+      "text": "22604"
+    },
+    {
+      "id": "action-4",
+      "isNew": false,
+      "text": "加大赛风"
     }
   ]
 }

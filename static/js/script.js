@@ -6,6 +6,10 @@ let solutionsData = [];
 let annotationLinks = {}; // 结构: { solutionId: [problemId1, problemId2], ... }
 let selectedSolutionId = null;
 
+// 优化双击事件处理
+let clickTimeout = null;
+let isDoubleClick = false;
+
 // DOM元素引用
 const elements = {
     patientInfo: document.getElementById('patient-info'),
@@ -13,6 +17,7 @@ const elements = {
     prevButton: document.getElementById('prev-patient'),
     nextButton: document.getElementById('next-patient'),
     saveButton: document.getElementById('save-btn'),
+    addActionBtn: document.getElementById('add-action-btn'),
     problemsContainer: document.getElementById('problems-container'),
     solutionsContainer: document.getElementById('solutions-container'),
     loading: document.getElementById('loading'),
@@ -136,18 +141,56 @@ function renderSolutions() {
         chip.textContent = solution.text;
         chip.contentEditable = false;
         
+        // 标记新建的动作
+        if (solution.isNew) {
+            chip.classList.add('new-action');
+        }
+        
         // 检查是否被选中
         if (selectedSolutionId === solution.id) {
             chip.classList.add('selected');
         }
         
-        // 单击事件：选择/取消选择
-        chip.addEventListener('click', () => handleSolutionClick(solution.id));
+        // 优化的点击和双击处理
+        chip.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // 防止文本选择
+        });
         
-        // 双击事件：编辑文本
-        chip.addEventListener('dblclick', (e) => {
+        chip.addEventListener('click', (e) => {
             e.stopPropagation();
+            
+            if (isDoubleClick) {
+                isDoubleClick = false;
+                return;
+            }
+            
+            // 单击事件延迟执行，如果是双击则取消
+            clickTimeout = setTimeout(() => {
+                if (!isDoubleClick) {
+                    handleSolutionClick(solution.id);
+                }
+            }, 250); // 250ms延迟
+        });
+        
+        chip.addEventListener('dblclick', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            isDoubleClick = true;
+            
+            // 清除单击超时
+            if (clickTimeout) {
+                clearTimeout(clickTimeout);
+                clickTimeout = null;
+            }
+            
+            // 启用编辑模式
             enableEditing(chip, solution.id);
+            
+            // 重置双击标志
+            setTimeout(() => {
+                isDoubleClick = false;
+            }, 300);
         });
         
         // 编辑完成事件
@@ -159,6 +202,25 @@ function renderSolutions() {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 chip.blur();
+            }
+            // 添加删除功能：按Ctrl+Delete键删除动作
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Delete') {
+                e.preventDefault();
+                deleteAction(solution.id);
+            }
+            // ESC键取消编辑
+            if (e.key === 'Escape') {
+                // 恢复原始文本
+                chip.textContent = solution.text;
+                chip.blur();
+            }
+        });
+        
+        // 右键菜单：删除动作
+        chip.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            if (confirm(`确定要删除动作"${solution.text}"吗？`)) {
+                deleteAction(solution.id);
             }
         });
         
@@ -213,29 +275,103 @@ function handleSolutionClick(solutionId) {
 
 // 启用编辑模式
 function enableEditing(chip, solutionId) {
+    // 防止重复启用编辑模式
+    if (chip.contentEditable === 'true') {
+        return;
+    }
+    
     chip.classList.add('editable');
     chip.contentEditable = true;
+    
+    // 聚焦并选中所有文本
     chip.focus();
     
     // 选中所有文本
-    const range = document.createRange();
-    range.selectNodeContents(chip);
-    const selection = window.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
+    setTimeout(() => {
+        const range = document.createRange();
+        range.selectNodeContents(chip);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }, 10);
+    
+    console.log('编辑模式已启用:', solutionId);
 }
 
 // 禁用编辑模式
 function disableEditing(chip, solutionId) {
+    // 检查是否真的在编辑模式
+    if (chip.contentEditable !== 'true') {
+        return;
+    }
+    
     chip.classList.remove('editable');
     chip.contentEditable = false;
+    
+    // 清除选择
+    window.getSelection().removeAllRanges();
     
     // 更新数据
     const newText = chip.textContent.trim();
     const solution = solutionsData.find(s => s.id === solutionId);
-    if (solution && newText !== solution.text) {
-        solution.text = newText;
-        console.log('方案文本已更新:', solutionId, '→', newText);
+    if (solution) {
+        if (newText === '' || newText === '新建动作') {
+            // 如果文本为空，恢复原始文本
+            chip.textContent = solution.text;
+            showMessage('动作文本不能为空', 'error');
+        } else {
+            solution.text = newText;
+            solution.isNew = false; // 移除新建标记
+            console.log('方案文本已更新:', solutionId, '→', newText);
+            chip.classList.remove('new-action');
+        }
+    }
+}
+
+// 新建动作功能
+function addNewAction() {
+    const newActionId = `action-${solutionsData.length}`;
+    const newAction = {
+        id: newActionId,
+        text: "新建动作",
+        isNew: true
+    };
+    
+    solutionsData.push(newAction);
+    renderSolutions();
+    
+    // 自动进入编辑模式
+    const newChip = document.querySelector(`[data-id="${newActionId}"]`);
+    if (newChip) {
+        setTimeout(() => {
+            enableEditing(newChip, newActionId);
+        }, 100);
+    }
+}
+
+// 删除动作功能
+function deleteAction(actionId) {
+    if (!confirm('确定要删除这个动作吗？')) {
+        return;
+    }
+    
+    const index = solutionsData.findIndex(s => s.id === actionId);
+    if (index > -1) {
+        // 删除相关标注链接
+        delete annotationLinks[actionId];
+        
+        // 删除动作
+        solutionsData.splice(index, 1);
+        
+        // 如果删除的是当前选中的动作，清除选择
+        if (selectedSolutionId === actionId) {
+            selectedSolutionId = null;
+        }
+        
+        renderSolutions();
+        renderProblems();
+        
+        console.log('动作已删除:', actionId);
     }
 }
 
@@ -338,6 +474,9 @@ function setupEventListeners() {
     
     // 保存按钮
     elements.saveButton.addEventListener('click', saveAnnotations);
+    
+    // 新建动作按钮
+    elements.addActionBtn.addEventListener('click', addNewAction);
     
     // 键盘快捷键
     document.addEventListener('keydown', (e) => {
