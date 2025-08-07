@@ -135,6 +135,12 @@ body {
     overflow-y: auto;
 }
 
+/* 问题面板专用样式 - 覆盖默认的flex布局 */
+#problems-panel .chip-container {
+    display: block;
+    flex-wrap: none;
+}
+
 /* 词块样式 */
 .chip {
     display: inline-block;
@@ -155,6 +161,35 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* 问题类型分组样式 */
+.problem-type-header {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin: 15px 0 8px 0;
+    padding: 5px 10px;
+    background: #f8f9fa;
+    border-left: 4px solid #ff9800;
+    border-radius: 3px;
+}
+
+.problem-type-header:first-child {
+    margin-top: 0;
+}
+
+.problem-type-container {
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.problem-type-container .chip.problem {
+    display: inline-block;
+    margin: 0;
+}
+
 /* 问题词块 */
 .chip.problem {
     background: #fff3e0;
@@ -172,6 +207,45 @@ body {
     border-color: #4caf50;
     color: #2e7d32;
     font-weight: 600;
+}
+
+/* 方案容器样式 */
+.solution-item {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+
+.solution-item:hover .delete-btn {
+    opacity: 1;
+}
+
+/* 删除按钮样式 */
+.delete-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f44336;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    z-index: 10;
+}
+
+.delete-btn:hover {
+    background: #d32f2f;
+    transform: scale(1.1);
 }
 
 /* 方案词块 */
@@ -268,6 +342,34 @@ body {
     padding: 10px 20px;
     border-bottom: 1px solid #eee;
     background: #f8f9fa;
+}
+
+/* 原始诊疗方案显示区域 */
+.original-plan-section {
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+}
+
+.original-plan-section h3 {
+    margin: 0;
+    padding: 10px 20px 5px 20px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 600;
+}
+
+.original-plan-content {
+    padding: 5px 20px 15px 20px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #555;
+    background: white;
+    margin: 0 10px 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+    white-space: pre-wrap;
+    max-height: 120px;
+    overflow-y: auto;
 }
 
 .add-button {

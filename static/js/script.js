@@ -20,6 +20,7 @@ const elements = {
     addActionBtn: document.getElementById('add-action-btn'),
     problemsContainer: document.getElementById('problems-container'),
     solutionsContainer: document.getElementById('solutions-container'),
+    originalPlanContent: document.getElementById('original-plan-content'),
     loading: document.getElementById('loading'),
     message: document.getElementById('message'),
     messageText: document.getElementById('message-text')
@@ -97,6 +98,7 @@ async function loadPatient(patientId) {
         
         renderProblems();
         renderSolutions();
+        renderOriginalPlan(data.original_treatment_plan || '');
         updateNavigationButtons();
         
         console.log('患者数据加载完成:', data);
@@ -109,25 +111,68 @@ async function loadPatient(patientId) {
     }
 }
 
-// 渲染问题列表
+// 渲染问题列表（按类型分组）
 function renderProblems() {
     elements.problemsContainer.innerHTML = '';
     
+    // 按类型分组
+    const problemsByType = {};
     problemsData.forEach(problem => {
-        const chip = document.createElement('div');
-        chip.className = 'chip problem';
-        chip.dataset.id = problem.id;
-        chip.textContent = problem.text;
-        chip.title = `类型: ${problem.type === 'examination' ? '检查发现' : '诊断'}`;
-        
-        // 检查是否与当前选中的方案有链接
-        if (selectedSolutionId && annotationLinks[selectedSolutionId]?.includes(problem.id)) {
-            chip.classList.add('linked');
+        const type = problem.type || '其他';
+        if (!problemsByType[type]) {
+            problemsByType[type] = [];
         }
-        
-        chip.addEventListener('click', () => handleProblemClick(problem.id));
-        elements.problemsContainer.appendChild(chip);
+        problemsByType[type].push(problem);
     });
+    
+    // 定义类型排序顺序
+    const typeOrder = ['主诉', '牙性', '牙齿', '骨性', '软组织', '功能', '生长发育', '不良习惯', '其他'];
+    
+    // 按顺序渲染每个类型
+    typeOrder.forEach(type => {
+        if (problemsByType[type]) {
+            // 创建类型标题
+            const typeHeader = document.createElement('div');
+            typeHeader.className = 'problem-type-header';
+            typeHeader.textContent = type;
+            elements.problemsContainer.appendChild(typeHeader);
+            
+            // 创建该类型的问题容器
+            const typeContainer = document.createElement('div');
+            typeContainer.className = 'problem-type-container';
+            
+            problemsByType[type].forEach(problem => {
+                const chip = document.createElement('div');
+                chip.className = 'chip problem';
+                chip.dataset.id = problem.id;
+                chip.textContent = problem.text;
+                chip.title = `类型: ${type}`;
+                
+                // 检查是否与当前选中的方案有链接
+                if (selectedSolutionId && annotationLinks[selectedSolutionId]?.includes(problem.id)) {
+                    chip.classList.add('linked');
+                }
+                
+                chip.addEventListener('click', () => handleProblemClick(problem.id));
+                typeContainer.appendChild(chip);
+            });
+            
+            elements.problemsContainer.appendChild(typeContainer);
+        }
+    });
+}
+
+// 渲染原始诊疗方案
+function renderOriginalPlan(originalText) {
+    if (elements.originalPlanContent) {
+        if (originalText && originalText.trim()) {
+            elements.originalPlanContent.textContent = originalText.trim();
+        } else {
+            elements.originalPlanContent.textContent = '暂无原始诊疗方案数据';
+            elements.originalPlanContent.style.fontStyle = 'italic';
+            elements.originalPlanContent.style.color = '#999';
+        }
+    }
 }
 
 // 渲染方案列表
@@ -135,11 +180,27 @@ function renderSolutions() {
     elements.solutionsContainer.innerHTML = '';
     
     solutionsData.forEach(solution => {
+        // 创建动作容器
+        const chipContainer = document.createElement('div');
+        chipContainer.className = 'solution-item';
+        
         const chip = document.createElement('div');
         chip.className = 'chip solution';
         chip.dataset.id = solution.id;
         chip.textContent = solution.text;
         chip.contentEditable = false;
+        
+        // 创建删除按钮
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'delete-btn';
+        deleteBtn.innerHTML = '×';
+        deleteBtn.title = '删除动作';
+        deleteBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (confirm(`确定要删除动作"${solution.text}"吗？`)) {
+                deleteAction(solution.id);
+            }
+        });
         
         // 标记新建的动作
         if (solution.isNew) {
@@ -224,7 +285,10 @@ function renderSolutions() {
             }
         });
         
-        elements.solutionsContainer.appendChild(chip);
+        // 组装容器
+        chipContainer.appendChild(chip);
+        chipContainer.appendChild(deleteBtn);
+        elements.solutionsContainer.appendChild(chipContainer);
     });
 }
 
@@ -350,28 +414,46 @@ function addNewAction() {
 }
 
 // 删除动作功能
-function deleteAction(actionId) {
+async function deleteAction(actionId) {
     if (!confirm('确定要删除这个动作吗？')) {
         return;
     }
     
-    const index = solutionsData.findIndex(s => s.id === actionId);
-    if (index > -1) {
-        // 删除相关标注链接
-        delete annotationLinks[actionId];
+    try {
+        // 调用后端API删除动作
+        const response = await fetch(`/api/action/delete/${currentPatientId}/${actionId}`, {
+            method: 'DELETE'
+        });
         
-        // 删除动作
-        solutionsData.splice(index, 1);
+        const data = await response.json();
         
-        // 如果删除的是当前选中的动作，清除选择
-        if (selectedSolutionId === actionId) {
-            selectedSolutionId = null;
+        if (!response.ok) {
+            throw new Error(data.error || '删除动作失败');
         }
         
-        renderSolutions();
-        renderProblems();
-        
-        console.log('动作已删除:', actionId);
+        // 从本地数据中删除
+        const index = solutionsData.findIndex(s => s.id === actionId);
+        if (index > -1) {
+            // 删除相关标注链接
+            delete annotationLinks[actionId];
+            
+            // 删除动作
+            solutionsData.splice(index, 1);
+            
+            // 如果删除的是当前选中的动作，清除选择
+            if (selectedSolutionId === actionId) {
+                selectedSolutionId = null;
+            }
+            
+            renderSolutions();
+            renderProblems();
+            
+            showMessage('动作删除成功', 'success');
+            console.log('动作已删除:', actionId);
+        }
+    } catch (error) {
+        console.error('删除动作失败:', error);
+        showMessage('删除动作失败: ' + error.message, 'error');
     }
 }
 

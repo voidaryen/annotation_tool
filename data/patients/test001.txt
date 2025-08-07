@@ -1,0 +1,10 @@
+Patient001<sep>测试患者
+Symptom<sep>前牙拥挤<sep>上颌前突
+Dental<sep>上颌牙列拥挤<sep>下颌前牙轻度拥挤
+Tooth<sep>上颌中切牙唇倾<sep>下颌侧切牙舌倾
+Skeletal<sep>上颌前突<sep>下颌后缩
+Softtissue<sep>上唇前突<sep>鼻唇角过小
+Functional<sep>前伸咬合<sep>咀嚼功能异常
+Growth<sep>生长发育基本正常
+UnhealthyHabits<sep>吮指习惯<sep>口呼吸习惯
+TreatmentPlan<sep>排齐牙列<sep>解除拥挤<sep>纠正中线<sep>调整磨牙关系<sep>内收前牙<sep>压低前牙

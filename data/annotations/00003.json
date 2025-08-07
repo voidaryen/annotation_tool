@@ -1,12 +1,16 @@
 {
   "patient_id": "00003",
   "annotations": {
-    "action-1": [
-      "problem-27"
-    ],
     "action-0": [
-      "problem-23"
-    ]
+      "problem-23",
+      "problem-7",
+      "problem-19",
+      "problem-15",
+      "problem-5",
+      "problem-16",
+      "problem-21"
+    ],
+    "action-1": []
   },
   "solutions": [
     {

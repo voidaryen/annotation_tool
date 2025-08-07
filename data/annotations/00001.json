@@ -8,13 +8,6 @@
       "problem-20",
       "problem-5"
     ],
-    "action-1": [
-      "problem-2",
-      "problem-5",
-      "problem-12",
-      "problem-17",
-      "problem-13"
-    ],
     "action-2": [
       "problem-22",
       "problem-11"
@@ -30,27 +23,16 @@
     ],
     "action-4": [
       "problem-12",
-      "problem-13"
-    ],
-    "action-5": [
-      "problem-19",
-      "problem-14",
-      "problem-17",
-      "problem-16",
-      "problem-8",
-      "problem-11",
-      "problem-5",
-      "problem-6"
+      "problem-13",
+      "problem-23",
+      "problem-1",
+      "problem-4"
     ]
   },
   "solutions": [
     {
       "id": "action-0",
       "text": "LLM response 1 "
-    },
-    {
-      "id": "action-1",
-      "text": "LLM response 2"
     },
     {
       "id": "action-2",
@@ -66,11 +48,6 @@
       "id": "action-4",
       "isNew": false,
       "text": "加大赛风"
-    },
-    {
-      "id": "action-5",
-      "text": "3569",
-      "isNew": false
     }
   ]
 }

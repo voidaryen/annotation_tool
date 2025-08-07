@@ -209,7 +209,8 @@ def get_patient_data(patient_id):
             "patient_id": patient_id,
             "problems": parsed_data["problems"],
             "solutions": solutions,
-            "annotations": annotations
+            "annotations": annotations,
+            "original_treatment_plan": parsed_data["treatment_plan"]
         })
         
     except Exception as e:
