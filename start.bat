@@ -1,8 +1,5 @@
 @echo off
-echo 正畸标注工具启动中...
-echo.
-echo 请确保已安装Python和相关依赖包
-echo 如果是首次运行，请先执行: pip install -r requirements.txt
-echo.
+REM Windows启动脚本
+set PATH=%~dp0python_env;%~dp0python_env\Scripts;%PATH%
 python app.py
 pause
