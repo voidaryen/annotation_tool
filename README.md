@@ -72,7 +72,7 @@ python app.py
 ### 患者病历格式（.txt文件）
 
 ```
-Patient<sep>王越峰<sep>ID:00001
+Patient<sep>这是姓名<sep>ID:00001
 Symptom<sep>牙不齐
 Dental<sep>上中线右偏<sep>偏移距离:2mm
 Dental<sep>上下牙弓不对称
