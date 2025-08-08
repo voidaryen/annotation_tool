@@ -153,6 +153,36 @@ def get_patients():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/last-edited-patient')
+def get_last_edited_patient():
+    """获取最近编辑的患者ID"""
+    try:
+        # 查找最近修改的标注文件
+        if not os.path.exists(ANNOTATIONS_DIR):
+            return jsonify({"patient_id": None})
+        
+        annotation_files = [f for f in os.listdir(ANNOTATIONS_DIR) if f.endswith('.json')]
+        if not annotation_files:
+            return jsonify({"patient_id": None})
+        
+        # 按修改时间排序，获取最近修改的文件
+        annotation_files_with_time = []
+        for f in annotation_files:
+            file_path = os.path.join(ANNOTATIONS_DIR, f)
+            mtime = os.path.getmtime(file_path)
+            patient_id = os.path.splitext(f)[0]
+            annotation_files_with_time.append((patient_id, mtime))
+        
+        # 按修改时间降序排序
+        annotation_files_with_time.sort(key=lambda x: x[1], reverse=True)
+        
+        # 返回最近修改的患者ID
+        latest_patient_id = annotation_files_with_time[0][0]
+        return jsonify({"patient_id": latest_patient_id})
+        
+    except Exception as e:
+        return jsonify({"patient_id": None})
+
 @app.route('/api/patient/<patient_id>')
 def get_patient_data(patient_id):
     """获取指定患者的数据"""

@@ -8,9 +8,16 @@
       "problem-15",
       "problem-5",
       "problem-16",
-      "problem-21"
+      "problem-21",
+      "problem-11",
+      "problem-12"
     ],
-    "action-1": []
+    "action-1": [
+      "problem-3",
+      "problem-4",
+      "problem-7",
+      "problem-11"
+    ]
   },
   "solutions": [
     {

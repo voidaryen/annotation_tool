@@ -21,12 +21,18 @@
       "problem-14",
       "problem-19"
     ],
-    "action-4": [
-      "problem-12",
-      "problem-13",
-      "problem-23",
-      "problem-1",
-      "problem-4"
+    "action-1754613096683-0": [
+      "problem-6",
+      "problem-8",
+      "problem-7",
+      "problem-19",
+      "problem-20",
+      "problem-22",
+      "problem-21",
+      "problem-24",
+      "problem-25",
+      "problem-26",
+      "problem-27"
     ]
   },
   "solutions": [
@@ -45,9 +51,9 @@
       "text": "22604"
     },
     {
-      "id": "action-4",
-      "isNew": false,
-      "text": "加大赛风"
+      "id": "action-1754613096683-0",
+      "text": "你好我是你爸爸",
+      "isNew": false
     }
   ]
 }

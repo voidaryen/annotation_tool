@@ -32,7 +32,10 @@ async function init() {
         showLoading(true);
         await loadPatientList();
         if (patientIds.length > 0) {
-            await loadPatient(patientIds[0]);
+            // 获取最近编辑的患者ID
+            const lastEditedPatient = await getLastEditedPatient();
+            const patientToLoad = lastEditedPatient || patientIds[0];
+            await loadPatient(patientToLoad);
         } else {
             showMessage('没有找到患者数据文件', 'error');
         }
@@ -42,6 +45,20 @@ async function init() {
     } finally {
         showLoading(false);
     }
+}
+
+// 获取最近编辑的患者
+async function getLastEditedPatient() {
+    try {
+        const response = await fetch('/api/last-edited-patient');
+        if (response.ok) {
+            const data = await response.json();
+            return data.patient_id;
+        }
+    } catch (error) {
+        console.log('获取最近编辑患者失败，使用默认患者');
+    }
+    return null;
 }
 
 // 加载患者列表
@@ -99,6 +116,15 @@ async function loadPatient(patientId) {
         renderProblems();
         renderSolutions();
         renderOriginalPlan(data.original_treatment_plan || '');
+        
+        // 默认选择第一个动作
+        if (solutionsData.length > 0) {
+            selectedSolutionId = solutionsData[0].id;
+            // 重新渲染以应用选择状态
+            renderSolutions();
+            renderProblems();
+        }
+        
         updateNavigationButtons();
         
         console.log('患者数据加载完成:', data);
@@ -458,14 +484,14 @@ async function deleteAction(actionId) {
 }
 
 // 保存标注
-async function saveAnnotations() {
+async function saveAnnotations(silent = false) {
     if (!currentPatientId) {
-        showMessage('没有选择患者', 'error');
+        if (!silent) showMessage('没有选择患者', 'error');
         return;
     }
     
     try {
-        showLoading(true);
+        if (!silent) showLoading(true);
         
         const payload = {
             annotations: annotationLinks,
@@ -486,30 +512,38 @@ async function saveAnnotations() {
             throw new Error(data.error || '保存失败');
         }
         
-        showMessage('保存成功!', 'success');
+        if (!silent) {
+            showMessage('保存成功!', 'success');
+        }
         console.log('保存完成:', data);
         
     } catch (error) {
         console.error('保存失败:', error);
-        showMessage('保存失败: ' + error.message, 'error');
+        if (!silent) {
+            showMessage('保存失败: ' + error.message, 'error');
+        }
     } finally {
-        showLoading(false);
+        if (!silent) showLoading(false);
     }
 }
 
 // 导航到上一个患者
-function navigateToPreviousPatient() {
+async function navigateToPreviousPatient() {
     const currentIndex = patientIds.indexOf(currentPatientId);
     if (currentIndex > 0) {
-        loadPatient(patientIds[currentIndex - 1]);
+        // 自动保存当前患者
+        await saveAnnotations(true); // 传入true表示静默保存
+        await loadPatient(patientIds[currentIndex - 1]);
     }
 }
 
 // 导航到下一个患者
-function navigateToNextPatient() {
+async function navigateToNextPatient() {
     const currentIndex = patientIds.indexOf(currentPatientId);
     if (currentIndex < patientIds.length - 1) {
-        loadPatient(patientIds[currentIndex + 1]);
+        // 自动保存当前患者
+        await saveAnnotations(true); // 传入true表示静默保存
+        await loadPatient(patientIds[currentIndex + 1]);
     }
 }
 
@@ -548,9 +582,13 @@ function setupEventListeners() {
     elements.nextButton.addEventListener('click', navigateToNextPatient);
     
     // 患者选择器
-    elements.patientSelector.addEventListener('change', (e) => {
-        if (e.target.value) {
-            loadPatient(e.target.value);
+    elements.patientSelector.addEventListener('change', async (e) => {
+        if (e.target.value && e.target.value !== currentPatientId) {
+            // 自动保存当前患者
+            if (currentPatientId) {
+                await saveAnnotations(true); // 静默保存
+            }
+            await loadPatient(e.target.value);
         }
     });
     
