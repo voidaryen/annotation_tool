@@ -1,0 +1,17 @@
+Patient<sep>流式测试<sep>ID:test_stream
+Symptom<sep>牙齿不齐
+Dental<sep>上中线偏移<sep>偏移距离:3mm
+Dental<sep>上下牙弓不对称
+Tooth<sep>18<sep>问题:阻生
+Tooth<sep>28<sep>问题:阻生
+Skeletal<sep>骨性II类
+Skeletal<sep>垂直向高角型
+Softtissue<sep>唇部前突
+Functional<sep>咀嚼功能异常
+TreatmentPlan<sep>综合正畸治疗方案<sep>id:1<sep>矫治目标:改善面型，建立稳定咬合<sep>矫治步骤:1. 拔除四颗前磨牙，为前牙内收创造间隙
+2. 上下颌牙列排齐整平，解除拥挤
+3. 前牙内收，改善前突
+4. 调整咬合关系，建立正常覆合覆盖
+5. 精细调整，完善咬合
+6. 保持治疗
+7. 拔除阻生智齿<sep>矫治费用:35000元

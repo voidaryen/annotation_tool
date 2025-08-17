@@ -16,9 +16,14 @@
                     <option value="">选择患者...</option>
                 </select>
                 <button id="next-patient">下一例</button>
+                <label class="stream-toggle">
+                    <input type="checkbox" id="use-stream" checked>
+                    <span>动态生成效果</span>
+                </label>
             </div>
             <div class="actions">
                 <button id="save-btn" class="save-button">保存标注</button>
+                <button id="debug-btn" class="debug-button" title="调试信息">🔧</button>
             </div>
         </header>
 
@@ -34,11 +39,16 @@
                 <h2>诊疗动作（双击修改）</h2>
                 <div class="panel-controls">
                     <button id="add-action-btn" class="add-button">+ 新建动作</button>
+                    <button id="regenerate-actions-btn" class="regenerate-button">🔄 重新抽取</button>
                 </div>
                 
                 <!-- 原始诊疗方案显示区域 -->
                 <div class="original-plan-section">
-                    <h3>原始诊疗方案</h3>
+                    <h3>原始诊疗方案 
+                        <button id="expand-plan-btn" class="expand-button" title="展开查看">
+                            <span>🔍</span>
+                        </button>
+                    </h3>
                     <div id="original-plan-content" class="original-plan-content">
                         <!-- JS会在这里显示原始诊疗方案文本 -->
                     </div>
@@ -57,6 +67,51 @@
 
         <div id="message" class="message hidden">
             <p id="message-text"></p>
+        </div>
+
+        <!-- 调试信息模态框 -->
+        <div id="debug-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>系统调试信息</h2>
+                    <button id="close-debug-btn" class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="debug-tabs">
+                        <button class="debug-tab active" data-tab="performance">性能监控</button>
+                        <button class="debug-tab" data-tab="errors">错误日志</button>
+                        <button class="debug-tab" data-tab="cache">缓存状态</button>
+                        <button class="debug-tab" data-tab="backup">本地备份</button>
+                    </div>
+                    <div id="debug-content" class="debug-content">
+                        <!-- 调试内容 -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="clear-cache-btn" class="debug-action-btn">清除缓存</button>
+                    <button id="export-debug-btn" class="debug-action-btn">导出调试信息</button>
+                    <button id="close-debug-footer-btn" class="modal-close-button">关闭</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 原始诊疗方案展开模态框 -->
+        <div id="plan-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>原始诊疗方案详情</h2>
+                    <button id="close-modal-btn" class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-plan-content" class="modal-plan-content">
+                        <!-- 详细的诊疗方案内容 -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="copy-plan-btn" class="copy-button">复制内容</button>
+                    <button id="close-modal-footer-btn" class="modal-close-button">关闭</button>
+                </div>
+            </div>
         </div>
     </div>
 
