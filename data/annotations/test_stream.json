@@ -1,0 +1,52 @@
+{
+  "patient_id": "test_stream",
+  "annotations": {},
+  "solutions": [
+    {
+      "id": "action-0",
+      "text": "拔除四颗前磨牙"
+    },
+    {
+      "id": "action-1",
+      "text": "排齐上颌牙列"
+    },
+    {
+      "id": "action-2",
+      "text": "排齐下颌牙列"
+    },
+    {
+      "id": "action-3",
+      "text": "整平上颌牙列"
+    },
+    {
+      "id": "action-4",
+      "text": "整平下颌牙列"
+    },
+    {
+      "id": "action-5",
+      "text": "解除拥挤"
+    },
+    {
+      "id": "action-6",
+      "text": "内收前牙"
+    },
+    {
+      "id": "action-7",
+      "text": "调整磨牙关系"
+    },
+    {
+      "id": "action-8",
+      "text": "建立正常覆合覆盖"
+    },
+    {
+      "id": "action-9",
+      "text": "正畸保持"
+    },
+    {
+      "id": "action-10",
+      "text": "拔除智齿"
+    }
+  ],
+  "last_modified": "2025-08-17T22:13:26.671001",
+  "version": "1.0"
+}

@@ -356,6 +356,25 @@ body {
     font-size: 14px;
     color: #666;
     font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expand-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    font-size: 16px;
+    color: #666;
+}
+
+.expand-button:hover {
+    background-color: #e9ecef;
+    color: #333;
 }
 
 .original-plan-content {
@@ -370,6 +389,30 @@ body {
     white-space: pre-wrap;
     max-height: 120px;
     overflow-y: auto;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.original-plan-content:hover {
+    background-color: #f8f9fa;
+    border-color: #2c5aa0;
+}
+
+.original-plan-content::after {
+    content: "点击展开详细查看";
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 11px;
+    color: #999;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.original-plan-content:hover::after {
+    opacity: 1;
 }
 
 .add-button {
@@ -383,9 +426,32 @@ body {
     transition: all 0.3s ease;
 }
 
+.regenerate-button {
+    padding: 6px 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+}
+
 .add-button:hover {
     background: #218838;
     transform: translateY(-1px);
+}
+
+.regenerate-button:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+.regenerate-button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .chip.new-action {
@@ -478,4 +544,303 @@ body {
 
 .chip-container::-webkit-scrollbar-thumb:hover {
     background: #a8a8a8;
+}
+
+/* 流式加载样式 */
+.streaming-message {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.streaming-action {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.streaming-action.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 流式切换开关样式 */
+.stream-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.stream-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.stream-toggle span {
+    color: #666;
+}
+
+.stream-toggle:hover span {
+    color: #2c5aa0;
+}
+
+/* 动作生成动画 */
+.chip-container-item {
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 流式加载时的特殊样式 */
+.solutions-panel.streaming .chip-container {
+    position: relative;
+}
+
+.solutions-panel.streaming .chip-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2c5aa0, #4CAF50, #2c5aa0);
+    background-size: 200% 100%;
+    animation: streamingBar 2s linear infinite;
+    border-radius: 0 0 8px 8px;
+}
+
+@keyframes streamingBar {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* 模态框样式 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+    max-height: 80%;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    padding: 20px 25px 15px 25px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.close-button:hover {
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.modal-body {
+    padding: 25px;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.modal-plan-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    background: #fafafa;
+    font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+}
+
+/* 格式化内容的样式 */
+.modal-plan-content .plan-header {
+    font-weight: bold;
+    color: #2c5aa0;
+    margin: 15px 0 8px 0;
+    font-size: 16px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 5px;
+}
+
+.modal-plan-content .plan-step {
+    margin: 10px 0;
+    padding: 8px 12px;
+    background: #e8f4fd;
+    border-left: 4px solid #2c5aa0;
+    border-radius: 4px;
+}
+
+.modal-plan-content .plan-step strong {
+    color: #1a4480;
+}
+
+.modal-plan-content .plan-point {
+    margin: 6px 0 6px 20px;
+    color: #555;
+    position: relative;
+}
+
+.modal-plan-content .plan-point::before {
+    content: "▸";
+    color: #2c5aa0;
+    position: absolute;
+    left: -15px;
+}
+
+.modal-plan-content .plan-text {
+    margin: 8px 0;
+    color: #666;
+    line-height: 1.7;
+}
+
+.modal-footer {
+    padding: 15px 25px 20px 25px;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background: #f8f9fa;
+    border-radius: 0 0 12px 12px;
+}
+
+.copy-button {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+    background: #0056b3;
+}
+
+.modal-close-button {
+    padding: 8px 16px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.modal-close-button:hover {
+    background: #545b62;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 95%;
+        max-height: 95%;
+        margin: 10px;
+    }
+    
+    .modal-header {
+        padding: 15px 20px 10px 20px;
+    }
+    
+    .modal-header h2 {
+        font-size: 18px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-footer {
+        padding: 10px 20px 15px 20px;
+        flex-direction: column-reverse;
+    }
+    
+    .copy-button,
+    .modal-close-button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
 }

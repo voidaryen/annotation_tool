@@ -1,73 +1,44 @@
 {
   "patient_id": "00002",
-  "annotations": {
-    "action-0": [
-      "problem-9",
-      "problem-11",
-      "problem-13",
-      "problem-14",
-      "problem-21",
-      "problem-22",
-      "problem-23",
-      "problem-24",
-      "problem-25",
-      "problem-26",
-      "problem-27"
-    ],
-    "action-1": [
-      "problem-6",
-      "problem-8",
-      "problem-15",
-      "problem-19",
-      "problem-20",
-      "problem-22",
-      "problem-23"
-    ],
-    "action-2": [
-      "problem-12",
-      "problem-14"
-    ],
-    "action-3": [
-      "problem-12",
-      "problem-14",
-      "problem-13",
-      "problem-8"
-    ],
-    "action-5": [
-      "problem-3",
-      "problem-8",
-      "problem-7",
-      "problem-11"
-    ]
-  },
+  "annotations": {},
   "solutions": [
     {
       "id": "action-0",
-      "text": "LLM response 1 "
+      "text": "排齐上颌牙列"
     },
     {
       "id": "action-1",
-      "text": "LLM response 2"
+      "text": "排齐下颌牙列"
     },
     {
       "id": "action-2",
-      "isNew": false,
-      "text": "123"
+      "text": "解除拥挤"
     },
     {
       "id": "action-3",
-      "isNew": false,
-      "text": "679458"
+      "text": "纠正扭转牙"
     },
     {
       "id": "action-4",
-      "isNew": false,
-      "text": "846"
+      "text": "纠正后牙锁合"
     },
     {
       "id": "action-5",
-      "isNew": false,
-      "text": "啊  asf66"
+      "text": "交互牵引"
+    },
+    {
+      "id": "action-6",
+      "text": "维持磨牙关系"
+    },
+    {
+      "id": "action-7",
+      "text": "拔除智齿"
+    },
+    {
+      "id": "action-8",
+      "text": "正畸保持"
     }
-  ]
+  ],
+  "last_modified": "2025-08-17T22:13:27.918729",
+  "version": "1.0"
 }

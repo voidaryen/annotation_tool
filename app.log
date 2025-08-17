@@ -1,0 +1,284 @@
+2025-08-17 21:58:13,752 - WARNING -  * Debugger is active!
+2025-08-17 21:58:13,756 - INFO -  * Debugger PIN: 545-974-712
+2025-08-17 21:58:15,221 - WARNING -  * Debugger is active!
+2025-08-17 21:58:15,225 - INFO -  * Debugger PIN: 143-828-151
+2025-08-17 21:58:15,478 - WARNING -  * Debugger is active!
+2025-08-17 21:58:15,492 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 21:58:33,795 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 21:58:33,795 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 21:58:34,845 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 21:58:34,891 - INFO -  * Detected change in 'c:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 21:58:35,730 - WARNING -  * Debugger is active!
+2025-08-17 21:58:35,733 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 21:58:35,820 - WARNING -  * Debugger is active!
+2025-08-17 21:58:35,823 - INFO -  * Debugger PIN: 545-974-712
+2025-08-17 21:58:35,846 - WARNING -  * Debugger is active!
+2025-08-17 21:58:35,849 - INFO -  * Debugger PIN: 143-828-151
+2025-08-17 21:59:02,586 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 21:59:02,596 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 21:59:02,596 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 21:59:02,766 - INFO -  * Detected change in 'c:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 21:59:02,947 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 21:59:03,538 - WARNING -  * Debugger is active!
+2025-08-17 21:59:03,541 - INFO -  * Debugger PIN: 545-974-712
+2025-08-17 21:59:03,946 - WARNING -  * Debugger is active!
+2025-08-17 21:59:03,951 - INFO -  * Debugger PIN: 143-828-151
+2025-08-17 21:59:04,015 - WARNING -  * Debugger is active!
+2025-08-17 21:59:04,018 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:00:09,499 - INFO - 127.0.0.1 - - [17/Aug/2025 22:00:09] "GET /?id=267889a6-d670-467c-8494-ead9b77a819d&vscodeBrowserReqId=1755439209472 HTTP/1.1" 200 -
+2025-08-17 22:00:09,907 - INFO - 127.0.0.1 - - [17/Aug/2025 22:00:09] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-08-17 22:00:09,933 - INFO - 127.0.0.1 - - [17/Aug/2025 22:00:09] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-17 22:00:09,974 - INFO - 127.0.0.1 - - [17/Aug/2025 22:00:09] "GET /api/patients HTTP/1.1" 200 -
+2025-08-17 22:00:09,997 - INFO - 127.0.0.1 - - [17/Aug/2025 22:00:09] "GET /api/last-edited-patient HTTP/1.1" 200 -
+2025-08-17 22:00:10,014 - INFO - 127.0.0.1 - - [17/Aug/2025 22:00:10] "GET /api/patient/00002 HTTP/1.1" 200 -
+2025-08-17 22:01:24,797 - INFO - ´´½¨±¸·Ý: data\backups\00002.json_20250817_220124.bak
+2025-08-17 22:01:24,799 - INFO - ±£´æ»¼Õß 00002 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:01:24,801 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:24] "POST /api/save/00002 HTTP/1.1" 200 -
+2025-08-17 22:01:24,810 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:24] "GET /api/patient/00001 HTTP/1.1" 200 -
+2025-08-17 22:01:33,010 - INFO - ´´½¨±¸·Ý: data\backups\00001.json_20250817_220133.bak
+2025-08-17 22:01:33,022 - INFO - ±£´æ»¼Õß 00001 ±ê×¢³É¹¦£¬°üº¬ 0 ¸ö¶¯×÷
+2025-08-17 22:01:33,023 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:33] "POST /api/save/00001 HTTP/1.1" 200 -
+2025-08-17 22:01:35,900 - INFO - ´´½¨±¸·Ý: data\backups\00001.json_20250817_220135.bak
+2025-08-17 22:01:35,901 - INFO - ±£´æ»¼Õß 00001 ±ê×¢³É¹¦£¬°üº¬ 0 ¸ö¶¯×÷
+2025-08-17 22:01:35,901 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:35] "POST /api/save/00001 HTTP/1.1" 200 -
+2025-08-17 22:01:35,907 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:35] "GET /api/patient/00002 HTTP/1.1" 200 -
+2025-08-17 22:01:36,595 - INFO - ´´½¨±¸·Ý: data\backups\00002.json_20250817_220136.bak
+2025-08-17 22:01:36,596 - INFO - ±£´æ»¼Õß 00002 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:01:36,596 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:36] "POST /api/save/00002 HTTP/1.1" 200 -
+2025-08-17 22:01:36,613 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:36] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:01:37,564 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_220137.bak
+2025-08-17 22:01:37,565 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:01:37,565 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:37] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:01:37,573 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:37] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:01:38,589 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220138.bak
+2025-08-17 22:01:38,592 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:01:38,592 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:38] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:01:38,597 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:38] "GET /api/patient/test_stream HTTP/1.1" 200 -
+2025-08-17 22:01:40,447 - INFO - ´´½¨±¸·Ý: data\backups\test_stream.json_20250817_220140.bak
+2025-08-17 22:01:40,448 - INFO - ±£´æ»¼Õß test_stream ±ê×¢³É¹¦£¬°üº¬ 11 ¸ö¶¯×÷
+2025-08-17 22:01:40,449 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:40] "POST /api/save/test_stream HTTP/1.1" 200 -
+2025-08-17 22:01:40,455 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:40] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:01:40,843 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220140.bak
+2025-08-17 22:01:40,844 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:01:40,844 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:40] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:01:40,856 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:40] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:01:41,475 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_220141.bak
+2025-08-17 22:01:41,477 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:01:41,478 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:41] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:01:41,482 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:41] "GET /api/patient/00002 HTTP/1.1" 200 -
+2025-08-17 22:01:42,713 - INFO - ´´½¨±¸·Ý: data\backups\00002.json_20250817_220142.bak
+2025-08-17 22:01:42,714 - INFO - ±£´æ»¼Õß 00002 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:01:42,715 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:42] "POST /api/save/00002 HTTP/1.1" 200 -
+2025-08-17 22:01:42,723 - INFO - 127.0.0.1 - - [17/Aug/2025 22:01:42] "GET /api/patient/00001 HTTP/1.1" 200 -
+2025-08-17 22:07:35,516 - INFO -  * Detected change in 'D:\\sft\\miniconda\\envs\\openwebui\\Lib\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-08-17 22:07:35,669 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:07:35,675 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:07:36,402 - INFO -  * Detected change in 'c:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:07:36,660 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:07:37,267 - WARNING -  * Debugger is active!
+2025-08-17 22:07:37,270 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:07:37,419 - WARNING -  * Debugger is active!
+2025-08-17 22:07:37,432 - INFO -  * Debugger PIN: 545-974-712
+2025-08-17 22:07:37,640 - WARNING -  * Debugger is active!
+2025-08-17 22:07:37,643 - INFO -  * Debugger PIN: 143-828-151
+2025-08-17 22:08:11,636 - INFO -  * Detected change in 'D:\\sft\\miniconda\\Scripts\\conda-script.py', reloading
+2025-08-17 22:08:12,810 - WARNING -  * Debugger is active!
+2025-08-17 22:08:12,814 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:08:13,232 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-17 22:08:13,232 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-17 22:08:13,241 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-17 22:08:14,074 - WARNING -  * Debugger is active!
+2025-08-17 22:08:14,077 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:08:21,842 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:21] "GET / HTTP/1.1" 200 -
+2025-08-17 22:08:21,965 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:21] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-17 22:08:21,966 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:21] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-08-17 22:08:22,130 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:22] "GET /api/patients HTTP/1.1" 200 -
+2025-08-17 22:08:22,411 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:22] "GET /api/last-edited-patient HTTP/1.1" 200 -
+2025-08-17 22:08:22,472 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:22] "GET /api/patient/00002 HTTP/1.1" 200 -
+2025-08-17 22:08:27,815 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:27] "GET /?id=267889a6-d670-467c-8494-ead9b77a819d&vscodeBrowserReqId=1755439707806 HTTP/1.1" 200 -
+2025-08-17 22:08:27,831 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:27] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-17 22:08:27,832 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:27] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-08-17 22:08:27,847 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:27] "GET /api/patients HTTP/1.1" 200 -
+2025-08-17 22:08:27,880 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:27] "GET /api/last-edited-patient HTTP/1.1" 200 -
+2025-08-17 22:08:27,891 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:27] "GET /api/patient/00002 HTTP/1.1" 200 -
+2025-08-17 22:08:50,624 - INFO - ´´½¨±¸·Ý: data\backups\00002.json_20250817_220850.bak
+2025-08-17 22:08:50,635 - INFO - ±£´æ»¼Õß 00002 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:08:50,636 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:50] "POST /api/save/00002 HTTP/1.1" 200 -
+2025-08-17 22:08:50,651 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:50] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:08:51,651 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_220851.bak
+2025-08-17 22:08:51,654 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:08:51,654 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:51] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:08:51,662 - INFO - 127.0.0.1 - - [17/Aug/2025 22:08:51] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:07,412 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:07] "GET / HTTP/1.1" 200 -
+2025-08-17 22:09:07,458 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-17 22:09:07,463 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:07] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-17 22:09:07,747 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:07] "GET /api/patients HTTP/1.1" 200 -
+2025-08-17 22:09:08,027 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:08] "GET /api/last-edited-patient HTTP/1.1" 200 -
+2025-08-17 22:09:08,055 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:08] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:09:09,444 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_220909.bak
+2025-08-17 22:09:09,445 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:09:09,446 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:09] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:09:09,459 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:09] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:10,128 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220910.bak
+2025-08-17 22:09:10,130 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:09:10,131 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:10] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:10,137 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:10] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:09:10,822 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_220910.bak
+2025-08-17 22:09:10,823 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:09:10,824 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:10] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:09:10,829 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:10] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:10,980 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220910.bak
+2025-08-17 22:09:10,982 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:09:10,982 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:10] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:10,991 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:10] "GET /api/patient/test_stream HTTP/1.1" 200 -
+2025-08-17 22:09:12,069 - INFO - ´´½¨±¸·Ý: data\backups\test_stream.json_20250817_220912.bak
+2025-08-17 22:09:12,072 - INFO - ±£´æ»¼Õß test_stream ±ê×¢³É¹¦£¬°üº¬ 11 ¸ö¶¯×÷
+2025-08-17 22:09:12,072 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:12] "POST /api/save/test_stream HTTP/1.1" 200 -
+2025-08-17 22:09:12,080 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:12] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:14,724 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220914.bak
+2025-08-17 22:09:14,727 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:09:14,727 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:14] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:18,613 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220918.bak
+2025-08-17 22:09:18,615 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:09:18,616 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:18] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:25,805 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220925.bak
+2025-08-17 22:09:25,808 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:09:25,808 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:25] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:30,651 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220930.bak
+2025-08-17 22:09:30,657 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:09:30,658 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:30] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:35,660 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220935.bak
+2025-08-17 22:09:35,662 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:09:35,663 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:35] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:43,587 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_220943.bak
+2025-08-17 22:09:43,590 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:09:43,591 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:43] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:09:43,599 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:43] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:09:55,984 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_220955.bak
+2025-08-17 22:09:55,988 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:09:55,989 - INFO - 127.0.0.1 - - [17/Aug/2025 22:09:55] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:10:01,723 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_221001.bak
+2025-08-17 22:10:01,726 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:10:01,727 - INFO - 127.0.0.1 - - [17/Aug/2025 22:10:01] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:10:08,558 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_221008.bak
+2025-08-17 22:10:08,560 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:10:08,561 - INFO - 127.0.0.1 - - [17/Aug/2025 22:10:08] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:10:16,274 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_221016.bak
+2025-08-17 22:10:16,279 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:10:16,280 - INFO - 127.0.0.1 - - [17/Aug/2025 22:10:16] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:10:55,782 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_221055.bak
+2025-08-17 22:10:55,783 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:10:55,784 - INFO - 127.0.0.1 - - [17/Aug/2025 22:10:55] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:12:12,027 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-17 22:12:12,027 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-17 22:12:12,035 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-17 22:12:12,856 - WARNING -  * Debugger is active!
+2025-08-17 22:12:12,859 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:12:27,953 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:27] "GET /?id=267889a6-d670-467c-8494-ead9b77a819d&vscodeBrowserReqId=1755439947947 HTTP/1.1" 200 -
+2025-08-17 22:12:27,962 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-17 22:12:27,963 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:27] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-08-17 22:12:27,969 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:27] "GET /api/patients HTTP/1.1" 200 -
+2025-08-17 22:12:27,979 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:27] "GET /api/last-edited-patient HTTP/1.1" 200 -
+2025-08-17 22:12:27,983 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:27] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:12:40,047 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:40] "GET / HTTP/1.1" 200 -
+2025-08-17 22:12:40,116 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-17 22:12:40,139 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:40] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-08-17 22:12:41,029 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:41] "GET /api/patients HTTP/1.1" 200 -
+2025-08-17 22:12:41,896 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:41] "GET / HTTP/1.1" 200 -
+2025-08-17 22:12:41,927 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-17 22:12:41,935 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:41] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-17 22:12:42,070 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:42] "GET /api/last-edited-patient HTTP/1.1" 200 -
+2025-08-17 22:12:42,094 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:42] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:12:42,187 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:42] "GET /api/patients HTTP/1.1" 200 -
+2025-08-17 22:12:42,473 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:42] "GET /api/last-edited-patient HTTP/1.1" 200 -
+2025-08-17 22:12:42,506 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:42] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:12:44,408 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_221244.bak
+2025-08-17 22:12:44,410 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:12:44,411 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:44] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:12:44,439 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:44] "GET /api/patient/00003?force_regenerate=true HTTP/1.1" 200 -
+2025-08-17 22:12:44,467 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:44] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:12:44,501 - INFO - 127.0.0.1 - - [17/Aug/2025 22:12:44] "GET /api/patient/00003/stream-actions HTTP/1.1" 200 -
+2025-08-17 22:12:47,840 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-08-17 22:13:04,027 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_221304.bak
+2025-08-17 22:13:04,031 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:13:04,032 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:04] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:13:04,040 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:04] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:13:04,678 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_221304.bak
+2025-08-17 22:13:04,683 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:13:04,684 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:04] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:13:04,694 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:04] "GET /api/patient/test_stream HTTP/1.1" 200 -
+2025-08-17 22:13:05,682 - INFO - ´´½¨±¸·Ý: data\backups\test_stream.json_20250817_221305.bak
+2025-08-17 22:13:05,686 - INFO - ±£´æ»¼Õß test_stream ±ê×¢³É¹¦£¬°üº¬ 11 ¸ö¶¯×÷
+2025-08-17 22:13:05,687 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:05] "POST /api/save/test_stream HTTP/1.1" 200 -
+2025-08-17 22:13:05,701 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:05] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:13:07,745 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_221307.bak
+2025-08-17 22:13:07,748 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:13:07,749 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:07] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:13:07,769 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:07] "GET /api/patient/test001?force_regenerate=true HTTP/1.1" 200 -
+2025-08-17 22:13:07,781 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:07] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:13:07,791 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:07] "GET /api/patient/test001/stream-actions HTTP/1.1" 200 -
+2025-08-17 22:13:15,330 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-08-17 22:13:24,911 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_221324.bak
+2025-08-17 22:13:24,913 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:13:24,914 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:24] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:13:24,921 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:24] "GET /api/patient/test_stream HTTP/1.1" 200 -
+2025-08-17 22:13:26,673 - INFO - ´´½¨±¸·Ý: data\backups\test_stream.json_20250817_221326.bak
+2025-08-17 22:13:26,678 - INFO - ±£´æ»¼Õß test_stream ±ê×¢³É¹¦£¬°üº¬ 11 ¸ö¶¯×÷
+2025-08-17 22:13:26,679 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:26] "POST /api/save/test_stream HTTP/1.1" 200 -
+2025-08-17 22:13:26,690 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:26] "GET /api/patient/test001 HTTP/1.1" 200 -
+2025-08-17 22:13:27,082 - INFO - ´´½¨±¸·Ý: data\backups\test001.json_20250817_221327.bak
+2025-08-17 22:13:27,086 - INFO - ±£´æ»¼Õß test001 ±ê×¢³É¹¦£¬°üº¬ 6 ¸ö¶¯×÷
+2025-08-17 22:13:27,087 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:27] "POST /api/save/test001 HTTP/1.1" 200 -
+2025-08-17 22:13:27,102 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:27] "GET /api/patient/00003 HTTP/1.1" 200 -
+2025-08-17 22:13:27,482 - INFO - ´´½¨±¸·Ý: data\backups\00003.json_20250817_221327.bak
+2025-08-17 22:13:27,485 - INFO - ±£´æ»¼Õß 00003 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:13:27,487 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:27] "POST /api/save/00003 HTTP/1.1" 200 -
+2025-08-17 22:13:27,505 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:27] "GET /api/patient/00002 HTTP/1.1" 200 -
+2025-08-17 22:13:27,922 - INFO - ´´½¨±¸·Ý: data\backups\00002.json_20250817_221327.bak
+2025-08-17 22:13:27,926 - INFO - ±£´æ»¼Õß 00002 ±ê×¢³É¹¦£¬°üº¬ 9 ¸ö¶¯×÷
+2025-08-17 22:13:27,927 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:27] "POST /api/save/00002 HTTP/1.1" 200 -
+2025-08-17 22:13:27,942 - INFO - 127.0.0.1 - - [17/Aug/2025 22:13:27] "GET /api/patient/00001 HTTP/1.1" 200 -
+2025-08-17 22:13:38,069 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:38,070 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:38,070 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:38,072 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:38,072 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:38,280 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-17 22:13:38,714 - INFO -  * Detected change in 'c:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:38,844 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:39,056 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-17 22:13:39,269 - WARNING -  * Debugger is active!
+2025-08-17 22:13:39,274 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:13:39,721 - WARNING -  * Debugger is active!
+2025-08-17 22:13:39,725 - INFO -  * Debugger PIN: 545-974-712
+2025-08-17 22:13:39,878 - WARNING -  * Debugger is active!
+2025-08-17 22:13:39,882 - INFO -  * Debugger PIN: 143-828-151
+2025-08-17 22:13:39,918 - WARNING -  * Debugger is active!
+2025-08-17 22:13:39,921 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:13:39,984 - WARNING -  * Debugger is active!
+2025-08-17 22:13:39,987 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:13:46,112 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,112 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,121 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,121 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,121 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,121 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,121 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,122 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,122 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,144 - INFO -  * Detected change in 'c:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:46,434 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-17 22:13:46,927 - WARNING -  * Debugger is active!
+2025-08-17 22:13:46,930 - INFO -  * Debugger PIN: 545-974-712
+2025-08-17 22:13:47,158 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-17 22:13:47,250 - WARNING -  * Debugger is active!
+2025-08-17 22:13:47,254 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:13:47,289 - INFO -  * Detected change in 'C:\\Users\\voidaryen\\Desktop\\annotation_tool\\app.py', reloading
+2025-08-17 22:13:47,966 - WARNING -  * Debugger is active!
+2025-08-17 22:13:47,969 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:13:48,034 - WARNING -  * Debugger is active!
+2025-08-17 22:13:48,037 - INFO -  * Debugger PIN: 133-544-933
+2025-08-17 22:13:48,177 - WARNING -  * Debugger is active!
+2025-08-17 22:13:48,180 - INFO -  * Debugger PIN: 143-828-151
