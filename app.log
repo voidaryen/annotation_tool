@@ -282,3 +282,16 @@
 2025-08-17 22:13:48,037 - INFO -  * Debugger PIN: 133-544-933
 2025-08-17 22:13:48,177 - WARNING -  * Debugger is active!
 2025-08-17 22:13:48,180 - INFO -  * Debugger PIN: 143-828-151
+2025-08-28 23:08:54,421 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-28 23:08:54,422 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-28 23:08:54,424 - INFO -  * Restarting with stat
+2025-08-28 23:08:55,113 - WARNING -  * Debugger is active!
+2025-08-28 23:08:55,115 - INFO -  * Debugger PIN: 143-828-151
+2025-08-28 23:08:58,061 - INFO - 127.0.0.1 - - [28/Aug/2025 23:08:58] "GET / HTTP/1.1" 200 -
+2025-08-28 23:08:58,353 - INFO - 127.0.0.1 - - [28/Aug/2025 23:08:58] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-28 23:08:58,414 - INFO - 127.0.0.1 - - [28/Aug/2025 23:08:58] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-08-28 23:08:58,426 - INFO - 127.0.0.1 - - [28/Aug/2025 23:08:58] "GET /api/patients HTTP/1.1" 200 -
+2025-08-28 23:08:58,694 - INFO - 127.0.0.1 - - [28/Aug/2025 23:08:58] "GET /api/last-edited-patient HTTP/1.1" 200 -
+2025-08-28 23:08:58,708 - INFO - 127.0.0.1 - - [28/Aug/2025 23:08:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-28 23:08:58,726 - INFO - 127.0.0.1 - - [28/Aug/2025 23:08:58] "GET /api/patient/test001 HTTP/1.1" 200 -
